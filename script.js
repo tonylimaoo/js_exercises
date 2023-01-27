@@ -9,13 +9,15 @@
     
     var previousCookies = document.cookie;
     var changeCookie = previousCookies;
-    var myInterval = setInterval(() =>{
-        changeCookie = document.cookie
-        if(changeCookie !== previousCookies){
-            document.cookie = 'cookie5_afterCookieCreation='
-            clearInterval(myInterval)
-        }
-    }, 1000)
+    var myInterval = function(){
+        return setInterval(() =>{
+            changeCookie = document.cookie
+            if(changeCookie !== previousCookies){
+                document.cookie = 'cookie5_afterCookieCreation='
+                clearInterval(myInterval)
+            }
+        }, 1000)
+    }
     
     myInterval()
     
