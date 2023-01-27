@@ -1,3 +1,5 @@
+var previousCookies = document.cookie;
+var changeCookie = previousCookies;
 var myInterval = setInterval(() =>{
     changeCookie = document.cookie
     if(changeCookie !== previousCookies){
